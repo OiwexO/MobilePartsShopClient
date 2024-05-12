@@ -1,6 +1,6 @@
 package com.iwex.mobilepartsshop.domain.repository.part
 
-import com.iwex.mobilepartsshop.domain.entity.part.PartType
+import com.iwex.mobilepartsshop.domain.entity.part.part_type.PartType
 
 interface PartTypeRepository {
 

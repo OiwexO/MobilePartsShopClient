@@ -1,4 +1,4 @@
-package com.iwex.mobilepartsshop.domain.entity.part
+package com.iwex.mobilepartsshop.domain.entity.part.part_type
 
 import java.io.Serializable
 

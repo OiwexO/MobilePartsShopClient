@@ -1,6 +1,6 @@
 package com.iwex.mobilepartsshop.domain.repository.part
 
-import com.iwex.mobilepartsshop.domain.entity.part.Manufacturer
+import com.iwex.mobilepartsshop.domain.entity.part.manufacturer.Manufacturer
 
 interface ManufacturerRepository {
 

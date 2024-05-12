@@ -1,8 +1,8 @@
-package com.iwex.mobilepartsshopstaff.domain.entity.part
+package com.iwex.mobilepartsshop.domain.entity.part
 
-import com.iwex.mobilepartsshop.domain.entity.part.DeviceType
-import com.iwex.mobilepartsshop.domain.entity.part.Manufacturer
-import com.iwex.mobilepartsshop.domain.entity.part.PartType
+import com.iwex.mobilepartsshop.domain.entity.part.device_type.DeviceType
+import com.iwex.mobilepartsshop.domain.entity.part.manufacturer.Manufacturer
+import com.iwex.mobilepartsshop.domain.entity.part.part_type.PartType
 import java.io.Serializable
 
 data class Part(
