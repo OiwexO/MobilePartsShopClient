@@ -5,11 +5,11 @@ import com.iwex.mobilepartsshop.domain.entity.user.AddressRequest
 
 interface AddressRepository {
 
-    fun getAddressByUserId(userId: Long): Result<Address>
+    suspend fun getAddressByUserId(userId: Long): Result<Address>
 
-    fun createAddress(userId: Long, request: AddressRequest): Result<Address>
+    suspend fun createAddress(userId: Long, request: AddressRequest): Result<Address>
 
-    fun updateAddress(userId: Long, request: AddressRequest): Result<Address>
+    suspend fun updateAddress(userId: Long, request: AddressRequest): Result<Address>
 
-    fun deleteAddressByUserId(userId: Long): Result<Unit>
+    suspend fun deleteAddressByUserId(userId: Long): Result<Unit>
 }

@@ -5,11 +5,11 @@ import com.iwex.mobilepartsshop.domain.entity.user.DeviceRequest
 
 interface DeviceRepository {
 
-    fun getDeviceByUserId(userId: Long): Result<Device>
+    suspend fun getDeviceByUserId(userId: Long): Result<Device>
 
-    fun createDevice(userId: Long, request: DeviceRequest): Result<Device>
+    suspend fun createDevice(userId: Long, request: DeviceRequest): Result<Device>
 
-    fun updateDevice(userId: Long, request: DeviceRequest): Result<Device>
+    suspend fun updateDevice(userId: Long, request: DeviceRequest): Result<Device>
 
-    fun deleteDeviceByUserId(userId: Long): Result<Unit>
+    suspend fun deleteDeviceByUserId(userId: Long): Result<Unit>
 }

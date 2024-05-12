@@ -5,13 +5,13 @@ import com.iwex.mobilepartsshop.domain.entity.review.ReviewRequest
 
 interface ReviewRepository {
 
-    fun getReviewsByPartId(partId: Long): Result<List<Review>>
+    suspend fun getReviewsByPartId(partId: Long): Result<List<Review>>
 
-    fun getReviewById(reviewId: Long): Result<Review>
+    suspend fun getReviewById(reviewId: Long): Result<Review>
 
-    fun createReview(request: ReviewRequest): Result<Review>
+    suspend fun createReview(request: ReviewRequest): Result<Review>
 
-    fun updateReview(reviewId: Long, request: ReviewRequest): Result<Review>
+    suspend fun updateReview(reviewId: Long, request: ReviewRequest): Result<Review>
 
-    fun deleteReview(reviewId: Long): Result<Unit>
+    suspend fun deleteReview(reviewId: Long): Result<Unit>
 }

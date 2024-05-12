@@ -1,6 +1,6 @@
 package com.iwex.mobilepartsshop.domain.entity.order
 
-import com.iwex.mobilepartsshopstaff.domain.entity.user.Address
+import com.iwex.mobilepartsshop.domain.entity.user.Address
 import java.util.Date
 
 data class Order(
