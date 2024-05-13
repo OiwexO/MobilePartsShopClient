@@ -4,14 +4,17 @@ import com.iwex.mobilepartsshop.data.remote.ApiConstants
 import com.iwex.mobilepartsshop.data.remote.AuthenticationApiService
 import com.iwex.mobilepartsshop.data.remote.MainApiService
 import com.iwex.mobilepartsshop.data.remote.dto.mapper.authentication.AuthenticationMapper
+import com.iwex.mobilepartsshop.data.remote.dto.mapper.authentication.RegistrationMapper
 import com.iwex.mobilepartsshop.data.remote.dto.mapper.order.OrderItemMapper
 import com.iwex.mobilepartsshop.data.remote.dto.mapper.order.OrderMapper
 import com.iwex.mobilepartsshop.data.remote.dto.mapper.part.PartMapper
 import com.iwex.mobilepartsshop.data.remote.dto.mapper.part.device_type.DeviceTypeMapper
 import com.iwex.mobilepartsshop.data.remote.dto.mapper.part.manufacturer.ManufacturerMapper
 import com.iwex.mobilepartsshop.data.remote.dto.mapper.part.part_type.PartTypeMapper
-import com.iwex.mobilepartsshop.data.remote.dto.mapper.user.AddressMapper
+import com.iwex.mobilepartsshop.data.remote.dto.mapper.review.ReviewMapper
+import com.iwex.mobilepartsshop.data.remote.dto.mapper.user.address.AddressMapper
 import com.iwex.mobilepartsshop.data.remote.dto.mapper.user.UserMapper
+import com.iwex.mobilepartsshop.data.remote.dto.mapper.user.device.DeviceMapper
 import com.iwex.mobilepartsshop.data.remote.interceptor.AccessTokenInterceptor
 import dagger.Module
 import dagger.Provides
@@ -81,6 +84,10 @@ object NetworkModule {
         AuthenticationMapper(userMapper)
 
     @[Provides Singleton]
+    fun provideRegistrationMapper(userMapper: UserMapper): RegistrationMapper =
+        RegistrationMapper(userMapper)
+
+    @[Provides Singleton]
     fun provideDeviceTypeMapper(): DeviceTypeMapper = DeviceTypeMapper()
 
     @[Provides Singleton]
@@ -97,14 +104,25 @@ object NetworkModule {
     ): PartMapper = PartMapper(manufacturerMapper, deviceTypeMapper, partTypeMapper)
 
     @[Provides Singleton]
+    fun provideReviewMapper(
+        userMapper: UserMapper
+    ): ReviewMapper = ReviewMapper(userMapper)
+
+    @[Provides Singleton]
     fun provideUserMapper(): UserMapper = UserMapper()
+
+    @[Provides Singleton]
+    fun provideAddressMapper(): AddressMapper = AddressMapper()
+
+    @[Provides Singleton]
+    fun provideDeviceMapper(
+        manufacturerMapper: ManufacturerMapper,
+        deviceTypeMapper: DeviceTypeMapper
+    ): DeviceMapper = DeviceMapper(manufacturerMapper, deviceTypeMapper)
 
     @[Provides Singleton]
     fun provideOrderItemMapper(partMapper: PartMapper): OrderItemMapper =
         OrderItemMapper(partMapper)
-
-    @[Provides Singleton]
-    fun provideAddressMapper(): AddressMapper = AddressMapper()
 
     @[Provides Singleton]
     fun provideOrderMapper(

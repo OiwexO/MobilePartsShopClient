@@ -3,6 +3,7 @@ package com.iwex.mobilepartsshop.data.repository.authentication
 import android.content.SharedPreferences
 import com.iwex.mobilepartsshop.data.remote.AuthenticationApiService
 import com.iwex.mobilepartsshop.data.remote.dto.mapper.authentication.AuthenticationMapper
+import com.iwex.mobilepartsshop.data.remote.dto.mapper.authentication.RegistrationMapper
 import com.iwex.mobilepartsshop.domain.entity.authentication.AuthenticationRequest
 import com.iwex.mobilepartsshop.domain.entity.authentication.AuthenticationResponse
 import com.iwex.mobilepartsshop.domain.entity.authentication.Jwt
@@ -15,30 +16,31 @@ import javax.inject.Inject
 class AuthenticationRepositoryImpl @Inject constructor(
     private val apiService: AuthenticationApiService,
     private val preferences: SharedPreferences,
-    private val mapper: AuthenticationMapper
+    private val authenticationMapper: AuthenticationMapper,
+    private val registrationMapper: RegistrationMapper
 ) : AuthenticationRepository {
 
-    override suspend fun registerUser(registrationRequest: RegistrationRequest): Result<AuthenticationResponse> {
-        val requestDto = mapper.toRegistrationRequestDto(registrationRequest)
+    override suspend fun registerUser(request: RegistrationRequest): Result<AuthenticationResponse> {
+        val requestDto = registrationMapper.toRequestDto(request)
         val response = try {
             apiService.registerUser(requestDto)
         } catch (e: Exception) {
             return Result.failure(e)
         }
-        val entity = mapper.toEntity(response)
+        val entity = authenticationMapper.toEntity(response)
         saveUser(entity.user)
         saveJwt(entity.jwtToken)
         return Result.success(entity)
     }
 
-    override suspend fun authenticateUser(authenticationRequest: AuthenticationRequest): Result<AuthenticationResponse> {
-        val requestDto = mapper.toRequestDto(authenticationRequest)
+    override suspend fun authenticateUser(request: AuthenticationRequest): Result<AuthenticationResponse> {
+        val requestDto = authenticationMapper.toRequestDto(request)
         val response = try {
             apiService.authenticateUser(requestDto)
         } catch (e: Exception) {
             return Result.failure(e)
         }
-        val entity = mapper.toEntity(response)
+        val entity = authenticationMapper.toEntity(response)
         saveUser(entity.user)
         saveJwt(entity.jwtToken)
         return Result.success(entity)

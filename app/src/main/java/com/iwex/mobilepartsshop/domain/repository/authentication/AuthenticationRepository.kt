@@ -8,9 +8,9 @@ import com.iwex.mobilepartsshop.domain.entity.user.User
 
 interface AuthenticationRepository {
 
-    suspend fun registerUser(registrationRequest: RegistrationRequest): Result<AuthenticationResponse>
+    suspend fun registerUser(request: RegistrationRequest): Result<AuthenticationResponse>
 
-    suspend fun authenticateUser(authenticationRequest: AuthenticationRequest): Result<AuthenticationResponse>
+    suspend fun authenticateUser(request: AuthenticationRequest): Result<AuthenticationResponse>
 
     suspend fun isAuthenticated(): Result<Boolean>
 

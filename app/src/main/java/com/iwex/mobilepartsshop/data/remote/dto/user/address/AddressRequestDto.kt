@@ -1,9 +1,8 @@
-package com.iwex.mobilepartsshop.data.remote.dto.user
+package com.iwex.mobilepartsshop.data.remote.dto.user.address
 
 import com.google.gson.annotations.SerializedName
 
-data class AddressResponseDto(
-    @SerializedName("id") val id: Long,
+data class AddressRequestDto(
     @SerializedName("postalCode") val postalCode: Int,
     @SerializedName("country") val country: String,
     @SerializedName("state") val state: String,

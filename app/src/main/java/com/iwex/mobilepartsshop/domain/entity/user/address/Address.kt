@@ -1,6 +1,7 @@
-package com.iwex.mobilepartsshop.domain.entity.user
+package com.iwex.mobilepartsshop.domain.entity.user.address
 
-data class AddressRequest(
+data class Address(
+    val id: Long,
     val postalCode: Int,
     val country: String,
     val state: String,

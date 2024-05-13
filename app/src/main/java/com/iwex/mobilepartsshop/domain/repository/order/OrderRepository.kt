@@ -9,9 +9,9 @@ interface OrderRepository {
 
     suspend fun getOrder(id: Long): Result<Order>
 
-    suspend fun createOrder(orderRequest: OrderRequest): Result<Order>
+    suspend fun createOrder(customerId: Long, request: OrderRequest): Result<Order>
 
-    suspend fun updateOrder(id: Long, orderRequest: OrderRequest): Result<Order>
+    suspend fun updateOrder(id: Long, request: OrderRequest): Result<Order>
 
     suspend fun deleteOrder(id: Long): Result<Unit>
 }

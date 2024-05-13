@@ -7,11 +7,11 @@ interface ReviewRepository {
 
     suspend fun getReviewsByPartId(partId: Long): Result<List<Review>>
 
-    suspend fun getReviewById(reviewId: Long): Result<Review>
+    suspend fun getReviewById(id: Long): Result<Review>
 
     suspend fun createReview(request: ReviewRequest): Result<Review>
 
-    suspend fun updateReview(reviewId: Long, request: ReviewRequest): Result<Review>
+    suspend fun updateReview(id: Long, request: ReviewRequest): Result<Review>
 
-    suspend fun deleteReview(reviewId: Long): Result<Unit>
+    suspend fun deleteReview(id: Long): Result<Unit>
 }

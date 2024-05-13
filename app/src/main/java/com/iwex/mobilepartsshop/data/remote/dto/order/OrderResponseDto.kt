@@ -1,7 +1,7 @@
 package com.iwex.mobilepartsshop.data.remote.dto.order
 
 import com.google.gson.annotations.SerializedName
-import com.iwex.mobilepartsshop.data.remote.dto.user.AddressResponseDto
+import com.iwex.mobilepartsshop.data.remote.dto.user.address.AddressResponseDto
 import com.iwex.mobilepartsshop.domain.entity.order.OrderStatus
 import java.util.Date
 

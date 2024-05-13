@@ -1,7 +1,7 @@
 package com.iwex.mobilepartsshop.domain.repository.user
 
-import com.iwex.mobilepartsshop.domain.entity.user.Address
-import com.iwex.mobilepartsshop.domain.entity.user.AddressRequest
+import com.iwex.mobilepartsshop.domain.entity.user.address.Address
+import com.iwex.mobilepartsshop.domain.entity.user.address.AddressRequest
 
 interface AddressRepository {
 

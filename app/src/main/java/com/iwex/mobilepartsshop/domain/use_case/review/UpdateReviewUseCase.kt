@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 class UpdateReviewUseCase @Inject constructor(private val reviewRepository: ReviewRepository) {
 
-    suspend operator fun invoke(reviewId: Long, request: ReviewRequest): Result<Review> {
-        return reviewRepository.updateReview(reviewId, request)
+    suspend operator fun invoke(id: Long, request: ReviewRequest): Result<Review> {
+        return reviewRepository.updateReview(id, request)
     }
 }

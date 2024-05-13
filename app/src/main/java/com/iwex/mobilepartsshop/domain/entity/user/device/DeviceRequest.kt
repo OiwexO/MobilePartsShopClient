@@ -1,4 +1,4 @@
-package com.iwex.mobilepartsshop.domain.entity.user
+package com.iwex.mobilepartsshop.domain.entity.user.device
 
 data class DeviceRequest(
     val model: String,

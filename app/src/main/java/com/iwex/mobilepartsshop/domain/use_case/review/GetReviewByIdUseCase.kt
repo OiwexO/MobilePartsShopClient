@@ -6,7 +6,7 @@ import javax.inject.Inject
 
 class GetReviewByIdUseCase @Inject constructor(private val reviewRepository: ReviewRepository) {
 
-    suspend operator fun invoke(reviewId: Long): Result<Review> {
-        return reviewRepository.getReviewById(reviewId)
+    suspend operator fun invoke(id: Long): Result<Review> {
+        return reviewRepository.getReviewById(id)
     }
 }

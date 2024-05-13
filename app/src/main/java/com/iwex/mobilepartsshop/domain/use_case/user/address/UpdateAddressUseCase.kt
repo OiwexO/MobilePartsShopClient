@@ -1,7 +1,7 @@
 package com.iwex.mobilepartsshop.domain.use_case.user.address
 
-import com.iwex.mobilepartsshop.domain.entity.user.Address
-import com.iwex.mobilepartsshop.domain.entity.user.AddressRequest
+import com.iwex.mobilepartsshop.domain.entity.user.address.Address
+import com.iwex.mobilepartsshop.domain.entity.user.address.AddressRequest
 import com.iwex.mobilepartsshop.domain.repository.user.AddressRepository
 import javax.inject.Inject
 

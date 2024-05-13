@@ -1,20 +1,20 @@
-package com.iwex.mobilepartsshop.data.repository.order
+package com.iwex.mobilepartsshop.data.repository.review
 
 import com.iwex.mobilepartsshop.data.remote.MainApiService
-import com.iwex.mobilepartsshop.data.remote.dto.mapper.order.OrderMapper
-import com.iwex.mobilepartsshop.domain.entity.order.Order
-import com.iwex.mobilepartsshop.domain.entity.order.OrderRequest
-import com.iwex.mobilepartsshop.domain.repository.order.OrderRepository
+import com.iwex.mobilepartsshop.data.remote.dto.mapper.review.ReviewMapper
+import com.iwex.mobilepartsshop.domain.entity.review.Review
+import com.iwex.mobilepartsshop.domain.entity.review.ReviewRequest
+import com.iwex.mobilepartsshop.domain.repository.review.ReviewRepository
 import javax.inject.Inject
 
-class OrderRepositoryImpl @Inject constructor(
+class ReviewRepositoryImpl @Inject constructor(
     private val apiService: MainApiService,
-    private val mapper: OrderMapper,
-) : OrderRepository {
+    private val mapper: ReviewMapper
+) : ReviewRepository {
 
-    override suspend fun getOrdersByCustomerId(customerId: Long): Result<List<Order>> {
+    override suspend fun getReviewsByPartId(partId: Long): Result<List<Review>> {
         val response = try {
-            apiService.getOrdersByCustomerId(customerId)
+            apiService.getAllReviewsForPart(partId)
         } catch (e: Exception) {
             return Result.failure(e)
         }
@@ -22,9 +22,9 @@ class OrderRepositoryImpl @Inject constructor(
         return Result.success(entities)
     }
 
-    override suspend fun getOrder(id: Long): Result<Order> {
+    override suspend fun getReviewById(id: Long): Result<Review> {
         val response = try {
-            apiService.getOrder(id)
+            apiService.getReview(id)
         } catch (e: Exception) {
             return Result.failure(e)
         }
@@ -32,10 +32,10 @@ class OrderRepositoryImpl @Inject constructor(
         return Result.success(entity)
     }
 
-    override suspend fun createOrder(customerId: Long, request: OrderRequest): Result<Order> {
+    override suspend fun createReview(request: ReviewRequest): Result<Review> {
         val requestDto = mapper.toRequestDto(request)
         val response = try {
-            apiService.createOrder(customerId, requestDto)
+            apiService.createReview(requestDto)
         } catch (e: Exception) {
             return Result.failure(e)
         }
@@ -43,10 +43,10 @@ class OrderRepositoryImpl @Inject constructor(
         return Result.success(entity)
     }
 
-    override suspend fun updateOrder(id: Long, request: OrderRequest): Result<Order> {
+    override suspend fun updateReview(id: Long, request: ReviewRequest): Result<Review> {
         val requestDto = mapper.toRequestDto(request)
         val response = try {
-            apiService.updateOrder(id, requestDto)
+            apiService.updateReview(id, requestDto)
         } catch (e: Exception) {
             return Result.failure(e)
         }
@@ -54,9 +54,9 @@ class OrderRepositoryImpl @Inject constructor(
         return Result.success(entity)
     }
 
-    override suspend fun deleteOrder(id: Long): Result<Unit> {
+    override suspend fun deleteReview(id: Long): Result<Unit> {
         return try {
-            apiService.deleteOrder(id)
+            apiService.deleteReview(id)
             Result.success(Unit)
         } catch (e: Exception) {
             Result.failure(e)
