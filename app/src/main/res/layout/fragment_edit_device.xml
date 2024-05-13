@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".presentation.fragment.profile.device.EditDeviceFragment">
+
+    <!-- Manufacturer Label -->
+    <TextView
+        android:id="@+id/textViewManufacturerLabel"
+        style="@style/spinner_label"
+        android:text="@string/select_manufacturer"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerManufacturer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Manufacturer Spinner -->
+    <Spinner
+        android:id="@+id/spinnerManufacturer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewDeviceTypeLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewManufacturerLabel" />
+
+    <!-- Device Type Label -->
+    <TextView
+        android:id="@+id/textViewDeviceTypeLabel"
+        style="@style/spinner_label"
+        android:text="@string/select_device_type"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerDeviceType"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerManufacturer" />
+
+    <!-- Device Type Spinner -->
+    <Spinner
+        android:id="@+id/spinnerDeviceType"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/tilModel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDeviceTypeLabel" />
+
+    <!-- Model EditText -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilModel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="@string/hint_device_model"
+        app:layout_constraintBottom_toTopOf="@+id/tilSpecifications"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerDeviceType">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextModel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Specifications EditText -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilSpecifications"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="@string/hint_specifications"
+        app:layout_constraintBottom_toTopOf="@+id/btnSaveDevice"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilModel">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextSpecifications"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:minLines="3" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Button to Save Part -->
+    <Button
+        android:id="@+id/btnSaveDevice"
+        style="@style/button"
+        android:layout_margin="0dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/save_device"
+        app:layout_constraintBottom_toTopOf="@+id/btnCancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilSpecifications" />
+
+    <!-- Button to Cancel -->
+    <Button
+        android:id="@+id/btnCancel"
+        style="@style/button"
+        android:layout_margin="0dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSaveDevice" />
+
+    <ProgressBar
+        android:id="@+id/progressBarEditDeviceFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

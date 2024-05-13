@@ -26,11 +26,12 @@ class ProfileFragment : Fragment() {
     private lateinit var onLoggedOutListener: OnLoggedOutListener
 
     private lateinit var imageViewAvatar: ImageView
-    private lateinit var textViewUserId: TextView
     private lateinit var textViewUsername: TextView
     private lateinit var textViewFullName: TextView
     private lateinit var btnChangePersonalInfo: Button
     private lateinit var btnManageAssignedOrders: Button
+    private lateinit var btnEditDevice: Button
+    private lateinit var btnEditAddress : Button
     private lateinit var btnLogout: Button
     private lateinit var progressBar: ProgressBar
 
@@ -59,11 +60,12 @@ class ProfileFragment : Fragment() {
 
     private fun initViews(view: View) {
         imageViewAvatar = view.findViewById(R.id.imageViewAvatar)
-        textViewUserId = view.findViewById(R.id.textViewUserId)
         textViewUsername = view.findViewById(R.id.textViewUsername)
         textViewFullName = view.findViewById(R.id.textViewFullName)
         btnChangePersonalInfo = view.findViewById(R.id.btnChangePersonalInfo)
         btnManageAssignedOrders = view.findViewById(R.id.btnManageAssignedOrders)
+        btnEditDevice = view.findViewById(R.id.btnEditDevice)
+        btnEditAddress = view.findViewById(R.id.btnEditAddress)
         btnLogout = view.findViewById(R.id.btnLogout)
         progressBar = view.findViewById(R.id.progressBarProfileFragment)
     }
@@ -71,6 +73,12 @@ class ProfileFragment : Fragment() {
     private fun setClickListeners() {
         btnChangePersonalInfo.setOnClickListener {
             navigateToPersonalInfoFragment()
+        }
+        btnEditDevice.setOnClickListener {
+            navigateToEditDeviceFragment()
+        }
+        btnEditAddress.setOnClickListener {
+            navigateToEditAddress()
         }
         btnManageAssignedOrders.setOnClickListener {
             navigateToAssignedOrdersFragment()
@@ -81,6 +89,14 @@ class ProfileFragment : Fragment() {
     }
 
     private fun navigateToPersonalInfoFragment() {
+
+    }
+
+    private fun navigateToEditDeviceFragment() {
+        findNavController().navigate(R.id.action_profileFragment_to_editDeviceFragment)
+    }
+
+    private fun navigateToEditAddress() {
 
     }
 
@@ -102,7 +118,6 @@ class ProfileFragment : Fragment() {
     }
 
     private fun updateUi(user: User) {
-        textViewUserId.text = getString(R.string.user_id_placeholder, user.id)
         textViewUsername.text = getString(R.string.username_placeholder, user.username)
         textViewFullName.text =
             getString(R.string.full_name_placeholder, user.firstname, user.lastname)

@@ -8,6 +8,7 @@
     <string name="invalid_password">Пароль не може бути коротшим 5 символів</string>
     <string name="login_failed">Помилка авторизації</string>
     <string name="menu_profile">Профіль</string>
+    <string name="menu_cart">Кошик</string>
     <string name="menu_search">Пошук</string>
     <string name="menu_settings">Налаштування</string>
     <string name="btn_back">Назад</string>

@@ -14,7 +14,7 @@
         android:background="@drawable/background_circle"
         android:contentDescription="@string/user_avatar"
         android:src="@drawable/placeholder_avatar"
-        app:layout_constraintBottom_toTopOf="@id/textViewUserId"
+        app:layout_constraintBottom_toTopOf="@id/textViewUsername"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -22,41 +22,22 @@
 
     <!-- User Info -->
     <TextView
-        android:id="@+id/textViewUserId"
-        style="@style/profile_textview_style"
-        android:text="@string/user_id_placeholder"
-        app:layout_constraintBottom_toTopOf="@id/textViewUsername"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageViewAvatar" />
-
-    <TextView
         android:id="@+id/textViewUsername"
         style="@style/profile_textview_style"
         android:text="@string/username_placeholder"
         app:layout_constraintBottom_toTopOf="@id/textViewFullName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewUserId" />
+        app:layout_constraintTop_toBottomOf="@id/imageViewAvatar" />
 
     <TextView
         android:id="@+id/textViewFullName"
         style="@style/profile_textview_style"
         android:text="@string/full_name_placeholder"
-        app:layout_constraintBottom_toTopOf="@id/textViewAuthority"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewUsername" />
-
-    <TextView
-        android:id="@+id/textViewAuthority"
-        style="@style/profile_textview_style"
-        android:text="@string/authority_customer"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/btnChangePersonalInfo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewFullName" />
+        app:layout_constraintTop_toBottomOf="@id/textViewUsername" />
 
     <!-- Buttons -->
     <Button
@@ -66,16 +47,34 @@
         app:layout_constraintBottom_toTopOf="@id/btnManageAssignedOrders"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textViewAuthority" />
+        app:layout_constraintTop_toBottomOf="@id/textViewFullName" />
 
     <Button
         android:id="@+id/btnManageAssignedOrders"
         style="@style/button"
         android:text="@string/manage_orders"
-        app:layout_constraintBottom_toTopOf="@id/btnLogout"
+        app:layout_constraintBottom_toTopOf="@id/btnEditDevice"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnChangePersonalInfo" />
+
+    <Button
+        android:id="@+id/btnEditDevice"
+        style="@style/button"
+        android:text="@string/edit_device"
+        app:layout_constraintBottom_toTopOf="@id/btnEditAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnManageAssignedOrders" />
+
+    <Button
+        android:id="@+id/btnEditAddress"
+        style="@style/button"
+        android:text="@string/edit_address"
+        app:layout_constraintBottom_toTopOf="@id/btnLogout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnEditDevice" />
 
     <Button
         android:id="@+id/btnLogout"
@@ -84,7 +83,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnManageAssignedOrders" />
+        app:layout_constraintTop_toBottomOf="@id/btnEditAddress" />
 
     <ProgressBar
         android:id="@+id/progressBarProfileFragment"
@@ -95,6 +94,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

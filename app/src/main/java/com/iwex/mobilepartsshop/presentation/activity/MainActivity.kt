@@ -53,6 +53,10 @@ class MainActivity : AppCompatActivity(), OnLoggedInListener, OnLoggedOutListene
                     navController.navigate(R.id.profileFragment)
                     true
                 }
+                R.id.cartFragment -> {
+                    navController.navigate(R.id.cartFragment)
+                    true
+                }
                 R.id.searchPartsFragment -> {
                     navController.navigate(R.id.searchPartsFragment)
                     true

@@ -12,6 +12,7 @@
     <string name="login_failed">"Login failed"</string>
     <!-- Strings related to BottomNavigationView -->
     <string name="menu_profile">Profile</string>
+    <string name="menu_cart">Cart</string>
     <string name="menu_search">Search</string>
     <string name="menu_settings">Settings</string>
     <!-- Strings related to SettingsFragment -->
@@ -60,4 +61,16 @@
     <string name="update_order_status">Update order status</string>
     <string name="order_full_address_placeholder">Address: %s %s, %s, %s, %s %s</string>
     <string name="part_image">Part\'s image</string>
+    <string name="select_manufacturer">Select manufacturer</string>
+    <string name="select_device_type">Select device type</string>
+    <string name="hint_device_model">Device model</string>
+    <string name="hint_specifications">Specifications</string>
+    <string name="save_device">Save device</string>
+    <string name="cancel">Cancel</string>
+    <string name="edit_device">Edit device</string>
+    <string name="edit_address">Edit address</string>
+    <string name="invalid_specifications">Invalid specifications</string>
+    <string name="invalid_model">Invalid model</string>
+    <string name="invalid_manufacturer">Invalid manufacturer</string>
+    <string name="invalid_device_type">Invalid device type</string>
 </resources>

@@ -29,6 +29,9 @@
         <action
             android:id="@+id/action_profileFragment_to_ordersFragment"
             app:destination="@id/ordersFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_editDeviceFragment"
+            app:destination="@id/editDeviceFragment" />
     </fragment>
     <fragment
         android:id="@+id/ordersFragment"
@@ -53,5 +56,19 @@
         <argument
             android:name="orderId"
             app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.iwex.mobilepartsshop.presentation.fragment.cart.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" />
+    <fragment
+        android:id="@+id/editDeviceFragment"
+        android:name="com.iwex.mobilepartsshop.presentation.fragment.profile.device.EditDeviceFragment"
+        android:label="fragment_edit_device"
+        tools:layout="@layout/fragment_edit_device" >
+        <action
+            android:id="@+id/action_editDeviceFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
 </navigation>
