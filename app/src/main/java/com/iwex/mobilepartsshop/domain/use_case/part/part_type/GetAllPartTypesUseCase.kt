@@ -1,7 +1,7 @@
 package com.iwex.mobilepartsshop.domain.use_case.part.part_type
 
 import com.iwex.mobilepartsshop.domain.entity.part.part_type.PartType
-import com.iwex.mobilepartsshop.domain.repository.part.PartTypeRepository
+import com.iwex.mobilepartsshop.domain.repository.part.part_type.PartTypeRepository
 import javax.inject.Inject
 
 class GetAllPartTypesUseCase @Inject constructor(

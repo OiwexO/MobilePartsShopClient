@@ -25,10 +25,10 @@ import com.iwex.mobilepartsshop.data.repository.user.address.AddressRepositoryIm
 import com.iwex.mobilepartsshop.data.repository.user.device.DeviceRepositoryImpl
 import com.iwex.mobilepartsshop.domain.repository.authentication.AuthenticationRepository
 import com.iwex.mobilepartsshop.domain.repository.order.OrderRepository
-import com.iwex.mobilepartsshop.domain.repository.part.DeviceTypeRepository
-import com.iwex.mobilepartsshop.domain.repository.part.ManufacturerRepository
+import com.iwex.mobilepartsshop.domain.repository.part.device_type.DeviceTypeRepository
+import com.iwex.mobilepartsshop.domain.repository.part.manufacturer.ManufacturerRepository
 import com.iwex.mobilepartsshop.domain.repository.part.PartRepository
-import com.iwex.mobilepartsshop.domain.repository.part.PartTypeRepository
+import com.iwex.mobilepartsshop.domain.repository.part.part_type.PartTypeRepository
 import com.iwex.mobilepartsshop.domain.repository.review.ReviewRepository
 import com.iwex.mobilepartsshop.domain.repository.user.AddressRepository
 import com.iwex.mobilepartsshop.domain.repository.user.DeviceRepository

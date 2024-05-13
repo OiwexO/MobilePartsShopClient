@@ -1,4 +1,4 @@
-package com.iwex.mobilepartsshop.domain.repository.part
+package com.iwex.mobilepartsshop.domain.repository.part.device_type
 
 import com.iwex.mobilepartsshop.domain.entity.part.device_type.DeviceType
 

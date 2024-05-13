@@ -88,6 +88,16 @@ object NetworkModule {
         RegistrationMapper(userMapper)
 
     @[Provides Singleton]
+    fun provideOrderItemMapper(partMapper: PartMapper): OrderItemMapper =
+        OrderItemMapper(partMapper)
+
+    @[Provides Singleton]
+    fun provideOrderMapper(
+        orderItemMapper: OrderItemMapper,
+        addressMapper: AddressMapper
+    ): OrderMapper = OrderMapper(orderItemMapper, addressMapper)
+
+    @[Provides Singleton]
     fun provideDeviceTypeMapper(): DeviceTypeMapper = DeviceTypeMapper()
 
     @[Provides Singleton]
@@ -119,14 +129,4 @@ object NetworkModule {
         manufacturerMapper: ManufacturerMapper,
         deviceTypeMapper: DeviceTypeMapper
     ): DeviceMapper = DeviceMapper(manufacturerMapper, deviceTypeMapper)
-
-    @[Provides Singleton]
-    fun provideOrderItemMapper(partMapper: PartMapper): OrderItemMapper =
-        OrderItemMapper(partMapper)
-
-    @[Provides Singleton]
-    fun provideOrderMapper(
-        orderItemMapper: OrderItemMapper,
-        addressMapper: AddressMapper
-    ): OrderMapper = OrderMapper(orderItemMapper, addressMapper)
 }

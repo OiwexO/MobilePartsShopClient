@@ -1,4 +1,4 @@
-package com.iwex.mobilepartsshop.domain.repository.part
+package com.iwex.mobilepartsshop.domain.repository.part.part_type
 
 import com.iwex.mobilepartsshop.domain.entity.part.part_type.PartType
 

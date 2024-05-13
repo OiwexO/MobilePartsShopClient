@@ -3,7 +3,7 @@ package com.iwex.mobilepartsshop.data.repository.part
 import com.iwex.mobilepartsshop.data.remote.MainApiService
 import com.iwex.mobilepartsshop.data.remote.dto.mapper.part.part_type.PartTypeMapper
 import com.iwex.mobilepartsshop.domain.entity.part.part_type.PartType
-import com.iwex.mobilepartsshop.domain.repository.part.PartTypeRepository
+import com.iwex.mobilepartsshop.domain.repository.part.part_type.PartTypeRepository
 import javax.inject.Inject
 
 class PartTypeRepositoryImpl @Inject constructor(

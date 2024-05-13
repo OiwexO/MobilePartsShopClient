@@ -1,3 +1,63 @@
 <resources>
-    <string name="app_name">MobilePartsShop</string>
+    <string name="app_name" translatable="false">MobilePartsShop</string>
+    <string name="saved">Saved</string>
+    <!-- Strings related to LoginFragment -->
+    <string name="prompt_email" translatable="false">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome, %s!"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <!-- Strings related to BottomNavigationView -->
+    <string name="menu_profile">Profile</string>
+    <string name="menu_search">Search</string>
+    <string name="menu_settings">Settings</string>
+    <!-- Strings related to SettingsFragment -->
+    <string name="btn_back">Back</string>
+    <string name="label_language">Language</string>
+    <string name="label_theme">Theme</string>
+    <string name="item_language_en" translatable="false">English</string>
+    <string name="item_language_uk" translatable="false">Українська</string>
+    <string name="item_theme_system_default">System Default</string>
+    <string name="item_theme_light">Light</string>
+    <string name="item_theme_dark">Dark</string>
+    <!-- Strings related to item_manufacturer -->
+    <string name="manufacturer_logo">Manufacturer\'s logo</string>
+    <string name="add_manufacturer">Add manufacturer</string>
+    <string name="description_edit_manufacturer">Edit manufacturer</string>
+    <string name="description_delete_manufacturer">Delete manufacturer</string>
+    <!-- Strings related to item_part -->
+    <string name="price_placeholder">Price: %s UAH</string>
+    <!-- Strings related to ProfileFragment -->
+    <string name="full_name_placeholder">Full name: %s %s</string>
+    <string name="username_placeholder">Username: %s</string>
+    <string name="user_id_placeholder">User ID: %d</string>
+    <string name="authority_customer">Authority: Customer</string>
+    <string name="authority_staff">Authority: Staff</string>
+    <string name="authority_admin">Authority: Administrator</string>
+    <string name="change_personal_info">Change personal info</string>
+    <string name="manage_orders">Manage orders</string>
+    <string name="generate_report">Generate report</string>
+    <string name="save">Save</string>
+    <string name="user_avatar">User\'s avatar</string>
+    <string name="logout">Logout</string>
+    <!-- Strings related to item_order -->
+    <string name="open_order">Open order</string>
+    <string name="order_id_placeholder">Order ID: %d</string>
+    <string name="order_customer_id_placeholder">Customer ID: %d</string>
+    <string name="order_status_placeholder">Status: %s</string>
+    <string name="order_date_placeholder">Date: %s</string>
+    <string name="order_address_placeholder">Address: %s</string>
+    <string name="order_status_pending">pending</string>
+    <string name="order_status_processing">processing</string>
+    <string name="order_status_shipping">shipping</string>
+    <string name="order_status_delivered">delivered</string>
+    <string name="order_status_canceled">canceled</string>
+    <!-- Strings related to item_order_item -->
+    <string name="quantity_placeholder">Quantity: %d</string>
+    <string name="update_order_status">Update order status</string>
+    <string name="order_full_address_placeholder">Address: %s %s, %s, %s, %s %s</string>
+    <string name="part_image">Part\'s image</string>
 </resources>

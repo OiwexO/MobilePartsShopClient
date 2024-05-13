@@ -1,6 +1,6 @@
 package com.iwex.mobilepartsshop.domain.entity.order
 
-import com.iwex.mobilepartsshopstaff.domain.entity.part.Part
+import com.iwex.mobilepartsshop.domain.entity.part.Part
 
 data class OrderItem(
     val id: Long,
