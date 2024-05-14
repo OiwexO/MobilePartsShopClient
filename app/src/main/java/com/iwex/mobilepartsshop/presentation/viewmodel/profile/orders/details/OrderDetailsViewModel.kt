@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.iwex.mobilepartsshop.domain.entity.order.Order
+import com.iwex.mobilepartsshop.domain.entity.order.OrderStatus
 import com.iwex.mobilepartsshop.domain.use_case.order.GetOrderUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -18,6 +19,9 @@ class OrderDetailsViewModel @Inject constructor(
 
     private val _order = MutableLiveData<Order>()
     val order: LiveData<Order> = _order
+
+    private val _canCancelOrder = MutableLiveData<Boolean>()
+    val canCancelOrder: LiveData<Boolean> = _canCancelOrder
 
     private val _onSuccess = MutableLiveData<Unit>()
     val onSuccess: LiveData<Unit> = _onSuccess
@@ -34,6 +38,7 @@ class OrderDetailsViewModel @Inject constructor(
             val result = getOrderUseCase(orderId)
             result.onSuccess {
                 _order.value = it
+                _canCancelOrder.value = canCancelOrder(it)
             }.onFailure {
                 Log.d(TAG, it.toString())
                 _errorMessage.value = it.message ?: "Get order failed"
@@ -41,6 +46,14 @@ class OrderDetailsViewModel @Inject constructor(
         }
         _isLoading.value = false
     }
+
+    //TODO implement order cancellation
+    fun cancelOrder() {
+
+    }
+
+    private fun canCancelOrder(order: Order) =
+        order.status != OrderStatus.COMPLETED && order.status != OrderStatus.CANCELED
 
     companion object {
 

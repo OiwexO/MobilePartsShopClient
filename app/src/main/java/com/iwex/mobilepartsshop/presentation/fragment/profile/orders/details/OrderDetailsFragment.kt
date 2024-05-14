@@ -32,6 +32,7 @@ class OrderDetailsFragment : Fragment() {
     private lateinit var recyclerViewOrderItems: RecyclerView
     private lateinit var textViewAddress: TextView
     private lateinit var textViewOrderStatus: TextView
+    private lateinit var btnCancelOrder: Button
     private lateinit var btnBack: Button
     private lateinit var progressBar: ProgressBar
 
@@ -56,6 +57,7 @@ class OrderDetailsFragment : Fragment() {
         recyclerViewOrderItems = view.findViewById(R.id.recyclerViewOrderItems)
         textViewAddress = view.findViewById(R.id.textViewAddress)
         textViewOrderStatus = view.findViewById(R.id.textViewOrderStatus)
+        btnCancelOrder = view.findViewById(R.id.btnCancelOrder)
         btnBack = view.findViewById(R.id.btnBack)
         progressBar = view.findViewById(R.id.progressBarOrderDetailsFragment)
     }
@@ -67,6 +69,9 @@ class OrderDetailsFragment : Fragment() {
     }
 
     private fun setClickListeners() {
+        btnCancelOrder.setOnClickListener {
+            viewModel.cancelOrder()
+        }
         btnBack.setOnClickListener {
             navigateToOrdersFragment()
         }
@@ -79,6 +84,9 @@ class OrderDetailsFragment : Fragment() {
     private fun observeViewModel() {
         viewModel.order.observe(viewLifecycleOwner) {
             updateUi(it)
+        }
+        viewModel.canCancelOrder.observe(viewLifecycleOwner) {
+            btnCancelOrder.isEnabled = it
         }
         viewModel.onSuccess.observe(viewLifecycleOwner) {
             Toast.makeText(requireContext(), R.string.saved, Toast.LENGTH_SHORT).show()

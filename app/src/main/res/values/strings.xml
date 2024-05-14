@@ -55,6 +55,7 @@
     <string name="order_status_processing">processing</string>
     <string name="order_status_shipping">shipping</string>
     <string name="order_status_delivered">delivered</string>
+    <string name="order_status_completed">completed</string>
     <string name="order_status_canceled">canceled</string>
     <!-- Strings related to item_order_item -->
     <string name="quantity_placeholder">Quantity: %d</string>
@@ -74,4 +75,5 @@
     <string name="invalid_manufacturer">Invalid manufacturer</string>
     <string name="invalid_device_type">Invalid device type</string>
     <string name="any">Any</string>
+    <string name="cancel_order">Cancel order</string>
 </resources>

@@ -77,12 +77,21 @@
             tools:text="@string/order_status_placeholder" />
 
         <Button
+            android:id="@+id/btnCancelOrder"
+            style="@style/button"
+            android:text="@string/cancel_order"
+            android:enabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewOrderStatus" />
+
+        <Button
             android:id="@+id/btnBack"
             style="@style/button"
             android:text="@string/btn_back"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textViewOrderStatus" />
+            app:layout_constraintTop_toBottomOf="@id/btnCancelOrder" />
 
         <ProgressBar
             android:id="@+id/progressBarOrderDetailsFragment"

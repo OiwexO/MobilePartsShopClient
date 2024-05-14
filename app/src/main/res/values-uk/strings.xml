@@ -45,6 +45,7 @@
     <string name="order_status_processing">обробляється</string>
     <string name="order_status_shipping">в дорозі</string>
     <string name="order_status_delivered">доставлено</string>
+    <string name="order_status_completed">виконано</string>
     <string name="order_status_canceled">скасовано</string>
     <string name="quantity_placeholder">Кількість: %d</string>
     <string name="update_order_status">Оновити статус замовлення</string>
@@ -63,4 +64,5 @@
     <string name="invalid_manufacturer">Неправильний виробник</string>
     <string name="invalid_device_type">Неправильний тип пристрою</string>
     <string name="any">Будь-який</string>
+    <string name="cancel_order">Скасувати замовлення</string>
 </resources>
