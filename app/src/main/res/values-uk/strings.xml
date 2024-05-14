@@ -62,4 +62,5 @@
     <string name="invalid_model">Неправильна модель</string>
     <string name="invalid_manufacturer">Неправильний виробник</string>
     <string name="invalid_device_type">Неправильний тип пристрою</string>
+    <string name="any">Будь-який</string>
 </resources>

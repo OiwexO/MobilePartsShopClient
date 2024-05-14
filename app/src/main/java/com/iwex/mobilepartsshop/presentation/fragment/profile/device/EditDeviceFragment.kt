@@ -30,6 +30,8 @@ class EditDeviceFragment : Fragment() {
 
     private val viewModel: EditDeviceViewModel by viewModels()
 
+    private var manufacturerSpinnerAdapter: ManufacturerSpinnerAdapter? = null
+    private var deviceTypeSpinnerAdapter: DeviceTypeSpinnerAdapter? = null
     private lateinit var textViewManufacturerLabel: TextView
     private lateinit var spinnerManufacturer: Spinner
     private lateinit var textViewDeviceTypeLabel: TextView
@@ -129,20 +131,26 @@ class EditDeviceFragment : Fragment() {
     }
 
     private fun setDeviceData(device: Device) {
+        val manufacturerPosition = manufacturerSpinnerAdapter?.positionOf(device.manufacturer) ?: 0
+        spinnerManufacturer.setSelection(manufacturerPosition)
+        val deviceTypePosition = deviceTypeSpinnerAdapter?.positionOf(device.deviceType) ?: 0
+        spinnerDeviceType.setSelection(deviceTypePosition)
         editTextModel.setText(device.model)
         editTextSpecifications.setText(device.specifications)
     }
 
     private fun setupManufacturersSpinner(manufacturers: List<Manufacturer>) {
-        spinnerManufacturer.adapter = ManufacturerSpinnerAdapter(requireContext(), manufacturers)
+        manufacturerSpinnerAdapter = ManufacturerSpinnerAdapter(requireContext(), manufacturers)
+        spinnerManufacturer.adapter = manufacturerSpinnerAdapter
     }
 
     private fun setupDeviceTypesSpinner(deviceTypes: List<DeviceType>) {
-        spinnerDeviceType.adapter = DeviceTypeSpinnerAdapter(
+        deviceTypeSpinnerAdapter = DeviceTypeSpinnerAdapter(
             requireContext(),
             deviceTypes,
             LocalizationHelper.isUkrainianLocale(resources)
         )
+        spinnerDeviceType.adapter = deviceTypeSpinnerAdapter
     }
 
     private fun showError(stringId: Int, textInputLayout: TextInputLayout? = null) {

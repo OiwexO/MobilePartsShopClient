@@ -14,7 +14,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.iwex.mobilepartsshop.R
 import com.iwex.mobilepartsshop.domain.entity.user.User
-import com.iwex.mobilepartsshop.presentation.OnLoggedOutListener
+import com.iwex.mobilepartsshop.presentation.common.listener.OnLoggedOutListener
 import com.iwex.mobilepartsshop.presentation.viewmodel.profile.ProfileViewModel
 import dagger.hilt.android.AndroidEntryPoint
 

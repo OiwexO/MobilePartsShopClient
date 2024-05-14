@@ -73,4 +73,5 @@
     <string name="invalid_model">Invalid model</string>
     <string name="invalid_manufacturer">Invalid manufacturer</string>
     <string name="invalid_device_type">Invalid device type</string>
+    <string name="any">Any</string>
 </resources>

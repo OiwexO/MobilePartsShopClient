@@ -11,8 +11,8 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.iwex.mobilepartsshop.R
-import com.iwex.mobilepartsshop.presentation.OnLoggedInListener
-import com.iwex.mobilepartsshop.presentation.OnLoggedOutListener
+import com.iwex.mobilepartsshop.presentation.common.listener.OnLoggedInListener
+import com.iwex.mobilepartsshop.presentation.common.listener.OnLoggedOutListener
 import com.iwex.mobilepartsshop.presentation.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
