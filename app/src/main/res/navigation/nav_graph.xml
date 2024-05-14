@@ -76,7 +76,7 @@
     </fragment>
     <fragment
         android:id="@+id/partsFragment"
-        android:name="com.iwex.mobilepartsshop.presentation.viewmodel.parts.PartsFragment"
+        android:name="com.iwex.mobilepartsshop.presentation.fragment.parts.PartsFragment"
         android:label="fragment_parts"
         tools:layout="@layout/fragment_parts" >
         <argument
@@ -89,5 +89,8 @@
             app:argType="com.iwex.mobilepartsshop.domain.entity.recommendation.RecommendationByDeviceRequest"
             app:nullable="true"
             android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_partsFragment_to_searchPartsFragment"
+            app:destination="@id/searchPartsFragment" />
     </fragment>
 </navigation>
