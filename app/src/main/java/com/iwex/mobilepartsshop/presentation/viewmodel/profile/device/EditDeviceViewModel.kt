@@ -63,7 +63,7 @@ class EditDeviceViewModel @Inject constructor(
         _isLoading.value = false
     }
 
-    fun editDevice(request: DeviceRequest) {
+    fun saveDevice(request: DeviceRequest) {
         _isLoading.value = true
         if (validateDeviceRequest(request)) {
             viewModelScope.launch {

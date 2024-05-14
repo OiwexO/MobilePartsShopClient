@@ -50,4 +50,16 @@
     <string name="update_order_status">Оновити статус замовлення</string>
     <string name="order_full_address_placeholder">Адреса: %s %s, %s, %s, %s %s</string>
     <string name="part_image">Зображення комплектуючої</string>
+    <string name="select_manufacturer">Виберіть виробника</string>
+    <string name="select_device_type">Виберіть тип пристрою</string>
+    <string name="hint_device_model">Модель пристрою</string>
+    <string name="hint_specifications">Характеристики</string>
+    <string name="save_device">Зберегти пристрій</string>
+    <string name="cancel">Скасувати</string>
+    <string name="edit_device">Редагувати пристрій</string>
+    <string name="edit_address">Редагувати адресу</string>
+    <string name="invalid_specifications">Неправильні характеристики</string>
+    <string name="invalid_model">Неправильна модель</string>
+    <string name="invalid_manufacturer">Неправильний виробник</string>
+    <string name="invalid_device_type">Неправильний тип пристрою</string>
 </resources>

@@ -6,7 +6,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.iwex.mobilepartsshop.domain.use_case.authentication.CheckIsUserAuthenticatedUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @HiltViewModel
@@ -19,10 +21,12 @@ class MainViewModel @Inject constructor(
 
     fun checkUserAuthentication() {
         viewModelScope.launch {
-            try {
-                val result = checkIsUserAuthenticatedUseCase()
-                _isUserAuthenticated.value = result.getOrThrow()
-            } catch (e: Exception) {
+            val result = withContext(Dispatchers.IO) {
+                checkIsUserAuthenticatedUseCase()
+            }
+            result.onSuccess {
+                _isUserAuthenticated.value = it
+            }.onFailure {
                 _isUserAuthenticated.value = false
             }
         }

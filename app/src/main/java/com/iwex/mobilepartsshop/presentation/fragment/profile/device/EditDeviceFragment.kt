@@ -17,9 +17,15 @@ import com.google.android.material.textfield.TextInputLayout
 import com.iwex.mobilepartsshop.R
 import com.iwex.mobilepartsshop.domain.entity.part.device_type.DeviceType
 import com.iwex.mobilepartsshop.domain.entity.part.manufacturer.Manufacturer
+import com.iwex.mobilepartsshop.domain.entity.user.device.Device
+import com.iwex.mobilepartsshop.domain.entity.user.device.DeviceRequest
+import com.iwex.mobilepartsshop.presentation.common.adapter.DeviceTypeSpinnerAdapter
+import com.iwex.mobilepartsshop.presentation.common.adapter.ManufacturerSpinnerAdapter
 import com.iwex.mobilepartsshop.presentation.utils.LocalizationHelper
 import com.iwex.mobilepartsshop.presentation.viewmodel.profile.device.EditDeviceViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class EditDeviceFragment : Fragment() {
 
     private val viewModel: EditDeviceViewModel by viewModels()
@@ -66,16 +72,24 @@ class EditDeviceFragment : Fragment() {
 
     private fun setClickListeners() {
         btnSaveDevice.setOnClickListener {
-            editDevice()
+            saveDevice()
         }
         btnCancel.setOnClickListener {
             navigateToProfileFragment()
         }
     }
 
-    private fun editDevice() {
+    private fun saveDevice() {
         clearErrors()
-        //TODO
+        val manufacturerId = (spinnerManufacturer.selectedItem as? Manufacturer)?.id ?: 0
+        val deviceTypeId = (spinnerDeviceType.selectedItem as? DeviceType)?.id ?: 0
+        val deviceRequest = DeviceRequest(
+            model = editTextModel.text.toString().trim(),
+            specifications = editTextSpecifications.text.toString().trim(),
+            manufacturerId = manufacturerId,
+            deviceTypeId = deviceTypeId
+        )
+        viewModel.saveDevice(deviceRequest)
     }
 
     private fun clearErrors() {
@@ -89,6 +103,9 @@ class EditDeviceFragment : Fragment() {
         }
         viewModel.deviceTypes.observe(viewLifecycleOwner) {
             setupDeviceTypesSpinner(it)
+        }
+        viewModel.device.observe(viewLifecycleOwner) {
+            setDeviceData(it)
         }
         viewModel.formState.observe(viewLifecycleOwner) { state ->
             if (!state.isDataValid) {
@@ -108,6 +125,12 @@ class EditDeviceFragment : Fragment() {
         viewModel.errorMessage.observe(viewLifecycleOwner) {
             Toast.makeText(requireContext(), it, Toast.LENGTH_LONG).show()
         }
+        viewModel.loadData()
+    }
+
+    private fun setDeviceData(device: Device) {
+        editTextModel.setText(device.model)
+        editTextSpecifications.setText(device.specifications)
     }
 
     private fun setupManufacturersSpinner(manufacturers: List<Manufacturer>) {
