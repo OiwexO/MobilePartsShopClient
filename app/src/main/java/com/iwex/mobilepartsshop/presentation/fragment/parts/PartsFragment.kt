@@ -13,6 +13,8 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.RecyclerView
 import com.iwex.mobilepartsshop.R
+import com.iwex.mobilepartsshop.domain.entity.part.Part
+import com.iwex.mobilepartsshop.presentation.utils.LocalizationHelper
 import com.iwex.mobilepartsshop.presentation.viewmodel.parts.PartsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -38,6 +40,7 @@ class PartsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViews(view)
+        setupRecyclerView()
         setClickListeners()
         observeViewModel()
     }
@@ -46,6 +49,18 @@ class PartsFragment : Fragment() {
         recyclerViewParts = view.findViewById(R.id.recyclerViewParts)
         btnBack = view.findViewById(R.id.btnBack)
         progressBar = view.findViewById(R.id.progressBarPartsFragment)
+    }
+
+    private fun setupRecyclerView() {
+        partsListAdapter = PartsListAdapter(LocalizationHelper.isUkrainianLocale(resources))
+        partsListAdapter.onPartClickListener = {
+            navigateToPartDetailsFragment(it)
+        }
+        recyclerViewParts.adapter = partsListAdapter
+    }
+
+    private fun navigateToPartDetailsFragment(part: Part) {
+
     }
 
     private fun setClickListeners() {

@@ -11,6 +11,8 @@ import com.iwex.mobilepartsshop.data.remote.dto.mapper.part.PartMapper
 import com.iwex.mobilepartsshop.data.remote.dto.mapper.part.device_type.DeviceTypeMapper
 import com.iwex.mobilepartsshop.data.remote.dto.mapper.part.manufacturer.ManufacturerMapper
 import com.iwex.mobilepartsshop.data.remote.dto.mapper.part.part_type.PartTypeMapper
+import com.iwex.mobilepartsshop.data.remote.dto.mapper.recommendation.RecommendationByCriteriaMapper
+import com.iwex.mobilepartsshop.data.remote.dto.mapper.recommendation.RecommendationByDeviceMapper
 import com.iwex.mobilepartsshop.data.remote.dto.mapper.review.ReviewMapper
 import com.iwex.mobilepartsshop.data.remote.dto.mapper.user.address.AddressMapper
 import com.iwex.mobilepartsshop.data.remote.dto.mapper.user.UserMapper
@@ -112,6 +114,16 @@ object NetworkModule {
         deviceTypeMapper: DeviceTypeMapper,
         partTypeMapper: PartTypeMapper,
     ): PartMapper = PartMapper(manufacturerMapper, deviceTypeMapper, partTypeMapper)
+
+    @[Provides Singleton]
+    fun provideRecommendationByCriteriaMapper(
+        partMapper: PartMapper
+    ): RecommendationByCriteriaMapper = RecommendationByCriteriaMapper(partMapper)
+
+    @[Provides Singleton]
+    fun provideRecommendationByDeviceMapper(
+        partMapper: PartMapper
+    ): RecommendationByDeviceMapper = RecommendationByDeviceMapper(partMapper)
 
     @[Provides Singleton]
     fun provideReviewMapper(

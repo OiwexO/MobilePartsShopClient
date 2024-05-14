@@ -26,6 +26,8 @@ class ApiConstants {
 
         const val PARTS_MAPPING_V1 = "$PART_MAPPING_V1/parts"
 
+        const val RECOMMENDATIONS_MAPPING_V1 = "$PART_MAPPING_V1/recommendations"
+
         const val REVIEWS_MAPPING_V1 = "$GLOBAL_MAPPING_V1/review/reviews"
 
         const val ADDRESSES_MAPPING_V1 = "$USER_MAPPING_V1/addresses"

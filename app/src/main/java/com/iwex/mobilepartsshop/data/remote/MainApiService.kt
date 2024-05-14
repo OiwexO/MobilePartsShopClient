@@ -7,6 +7,7 @@ import com.iwex.mobilepartsshop.data.remote.ApiConstants.Companion.MANUFACTURERS
 import com.iwex.mobilepartsshop.data.remote.ApiConstants.Companion.ORDERS_MAPPING_V1
 import com.iwex.mobilepartsshop.data.remote.ApiConstants.Companion.PARTS_MAPPING_V1
 import com.iwex.mobilepartsshop.data.remote.ApiConstants.Companion.PART_TYPES_MAPPING_V1
+import com.iwex.mobilepartsshop.data.remote.ApiConstants.Companion.RECOMMENDATIONS_MAPPING_V1
 import com.iwex.mobilepartsshop.data.remote.ApiConstants.Companion.REVIEWS_MAPPING_V1
 import com.iwex.mobilepartsshop.data.remote.dto.order.OrderRequestDto
 import com.iwex.mobilepartsshop.data.remote.dto.order.OrderResponseDto
@@ -14,6 +15,8 @@ import com.iwex.mobilepartsshop.data.remote.dto.part.PartResponseDto
 import com.iwex.mobilepartsshop.data.remote.dto.part.device_type.DeviceTypeResponseDto
 import com.iwex.mobilepartsshop.data.remote.dto.part.manufacturer.ManufacturerResponseDto
 import com.iwex.mobilepartsshop.data.remote.dto.part.part_type.PartTypeResponseDto
+import com.iwex.mobilepartsshop.data.remote.dto.recommendation.RecommendationByCriteriaRequestDto
+import com.iwex.mobilepartsshop.data.remote.dto.recommendation.RecommendationByDeviceRequestDto
 import com.iwex.mobilepartsshop.data.remote.dto.review.ReviewRequestDto
 import com.iwex.mobilepartsshop.data.remote.dto.review.ReviewResponseDto
 import com.iwex.mobilepartsshop.data.remote.dto.user.address.AddressRequestDto
@@ -83,6 +86,14 @@ interface MainApiService {
 
     @GET("$PARTS_MAPPING_V1/{partId}")
     suspend fun getPart(@Path("partId") partId: Long): PartResponseDto
+
+    // recommendations
+
+    @POST("$RECOMMENDATIONS_MAPPING_V1/criteria")
+    suspend fun getPartsByCriteria(@Body request: RecommendationByCriteriaRequestDto): List<PartResponseDto>
+
+    @POST("$RECOMMENDATIONS_MAPPING_V1/device")
+    suspend fun getPartsByDevice(@Body request: RecommendationByDeviceRequestDto): List<PartResponseDto>
 
     // reviews
 
