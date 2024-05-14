@@ -15,6 +15,9 @@
         android:name="com.iwex.mobilepartsshop.presentation.fragment.search.SearchPartsFragment"
         android:label="fragment_management"
         tools:layout="@layout/fragment_search_parts">
+        <action
+            android:id="@+id/action_searchPartsFragment_to_partsFragment"
+            app:destination="@id/partsFragment" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
@@ -70,5 +73,21 @@
         <action
             android:id="@+id/action_editDeviceFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/partsFragment"
+        android:name="com.iwex.mobilepartsshop.presentation.viewmodel.parts.PartsFragment"
+        android:label="fragment_parts"
+        tools:layout="@layout/fragment_parts" >
+        <argument
+            android:name="recommendationByCriteriaRequest"
+            app:argType="com.iwex.mobilepartsshop.domain.entity.recommendation.RecommendationByCriteriaRequest"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <argument
+            android:name="recommendationByDeviceRequest"
+            app:argType="com.iwex.mobilepartsshop.domain.entity.recommendation.RecommendationByDeviceRequest"
+            app:nullable="true"
+            android:defaultValue="@null" />
     </fragment>
 </navigation>

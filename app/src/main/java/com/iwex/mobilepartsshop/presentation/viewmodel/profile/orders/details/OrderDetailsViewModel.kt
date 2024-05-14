@@ -40,7 +40,7 @@ class OrderDetailsViewModel @Inject constructor(
                 _order.value = it
                 _canCancelOrder.value = canCancelOrder(it)
             }.onFailure {
-                Log.d(TAG, it.toString())
+                Log.e(TAG, it.toString())
                 _errorMessage.value = it.message ?: "Get order failed"
             }
         }

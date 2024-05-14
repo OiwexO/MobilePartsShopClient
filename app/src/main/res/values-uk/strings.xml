@@ -65,4 +65,11 @@
     <string name="invalid_device_type">Неправильний тип пристрою</string>
     <string name="any">Будь-який</string>
     <string name="cancel_order">Скасувати замовлення</string>
+    <string name="search_by_criteria">Пошук за критеріями</string>
+    <string name="view_all_parts">Переглянути усі комплектуючі</string>
+    <string name="select_part_type">Виберіть тип комплектуючої</string>
+    <string name="sort_by_price">Від дешевших до дорожчих</string>
+    <string name="search">Пошук</string>
+    <string name="search_by_device">Пошук за пристроєм</string>
+    <string name="hint_save_device_first">(Спочатку потрібно зберегти пристрій у Профілі)</string>
 </resources>

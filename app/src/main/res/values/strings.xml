@@ -76,4 +76,11 @@
     <string name="invalid_device_type">Invalid device type</string>
     <string name="any">Any</string>
     <string name="cancel_order">Cancel order</string>
+    <string name="search_by_criteria">Search by criteria</string>
+    <string name="view_all_parts">View all parts</string>
+    <string name="select_part_type">Select part type</string>
+    <string name="sort_by_price">Sort by price</string>
+    <string name="search">Search</string>
+    <string name="search_by_device">Search by device</string>
+    <string name="hint_save_device_first">(to use this feature, first save the device in Profile)</string>
 </resources>

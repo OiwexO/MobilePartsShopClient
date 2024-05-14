@@ -74,7 +74,7 @@ class EditDeviceViewModel @Inject constructor(
                 result.onSuccess {
                     _onSuccess.value = Unit
                 }.onFailure {
-                    Log.d(TAG, it.toString())
+                    Log.e(TAG, it.toString())
                     _errorMessage.value = it.message ?: "Edit device failed"
                 }
             }
@@ -100,7 +100,7 @@ class EditDeviceViewModel @Inject constructor(
             result.onSuccess {
                 _manufacturers.value = it
             }.onFailure {
-                Log.d(TAG, it.toString())
+                Log.e(TAG, it.toString())
                 _errorMessage.value = it.message ?: "Get manufacturers failed"
             }
         }
@@ -114,7 +114,7 @@ class EditDeviceViewModel @Inject constructor(
             result.onSuccess {
                 _deviceTypes.value = it
             }.onFailure {
-                Log.d(TAG, it.toString())
+                Log.e(TAG, it.toString())
                 _errorMessage.value = it.message ?: "Get device types failed"
             }
         }
@@ -128,7 +128,7 @@ class EditDeviceViewModel @Inject constructor(
             result.onSuccess {
                 _device.value = it
             }.onFailure {
-                Log.d(TAG, it.toString())
+                Log.e(TAG, it.toString())
                 _errorMessage.value = it.message ?: "Get device failed"
             }
         }

@@ -38,11 +38,11 @@ class OrdersViewModel @Inject constructor(
                 result.onSuccess {
                     _orders.value = it
                 }.onFailure {
-                    Log.d(TAG, it.toString())
+                    Log.e(TAG, it.toString())
                     _errorMessage.value = it.message ?: "Get orders failed"
                 }
             }.onFailure {
-                Log.d(TAG, it.toString())
+                Log.e(TAG, it.toString())
                 _errorMessage.value = it.message ?: "Get user failed"
             }
         }
