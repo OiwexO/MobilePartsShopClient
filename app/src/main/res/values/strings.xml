@@ -83,4 +83,9 @@
     <string name="search">Search</string>
     <string name="search_by_device">Search by device</string>
     <string name="hint_save_device_first">(to use this feature, first save the device in Profile)</string>
+    <string name="reviews_placeholder">Customer reviews (%d):</string>
+    <string name="write_a_review">Write a review</string>
+    <string name="hint_review_edited">(Edited)</string>
+    <string name="rating_placeholder">Rating: %d/10</string>
+    <string name="add_part_to_cart">Add Part to Cart</string>
 </resources>

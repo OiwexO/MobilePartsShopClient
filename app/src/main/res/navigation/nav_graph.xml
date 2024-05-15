@@ -92,5 +92,20 @@
         <action
             android:id="@+id/action_partsFragment_to_searchPartsFragment"
             app:destination="@id/searchPartsFragment" />
+        <action
+            android:id="@+id/action_partsFragment_to_partDetailsFragment"
+            app:destination="@id/partDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/partDetailsFragment"
+        android:name="com.iwex.mobilepartsshop.presentation.fragment.parts.details.PartDetailsFragment"
+        android:label="fragment_part_details"
+        tools:layout="@layout/fragment_part_details" >
+        <action
+            android:id="@+id/action_partDetailsFragment_to_partsFragment"
+            app:destination="@id/partsFragment" />
+        <argument
+            android:name="part"
+            app:argType="com.iwex.mobilepartsshop.domain.entity.part.Part" />
     </fragment>
 </navigation>

@@ -60,7 +60,9 @@ class PartsFragment : Fragment() {
     }
 
     private fun navigateToPartDetailsFragment(part: Part) {
-
+        findNavController().navigate(
+            PartsFragmentDirections.actionPartsFragmentToPartDetailsFragment(part)
+        )
     }
 
     private fun setClickListeners() {

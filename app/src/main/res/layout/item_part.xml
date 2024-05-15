@@ -34,11 +34,8 @@
 
             <TextView
                 android:id="@+id/textViewName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                tools:text="Part's Name" />
+                tools:text="Part's Name"
+                style="@style/textview_part_spec_label" />
 
             <TextView
                 android:id="@+id/textViewSpecifications"
