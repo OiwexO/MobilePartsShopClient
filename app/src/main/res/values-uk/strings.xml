@@ -72,4 +72,9 @@
     <string name="search">Пошук</string>
     <string name="search_by_device">Пошук за пристроєм</string>
     <string name="hint_save_device_first">(Спочатку потрібно зберегти пристрій у Профілі)</string>
+    <string name="reviews_placeholder">Відгуки користувачів (%d):</string>
+    <string name="write_a_review">Написати відгук</string>
+    <string name="hint_review_edited">(Змінено)</string>
+    <string name="rating_placeholder">Рейтинг: %d/10</string>
+    <string name="add_part_to_cart">Додати до Кошика</string>
 </resources>
