@@ -81,7 +81,7 @@ class PartDetailsFragment : Fragment() {
 
     private fun setClickListeners() {
         btnAddToCart.setOnClickListener {
-
+            viewModel.addPartToCart(args.part)
         }
         btnWriteReview.setOnClickListener {
 
@@ -122,6 +122,10 @@ class PartDetailsFragment : Fragment() {
         }
         viewModel.isLoading.observe(viewLifecycleOwner) {
             switchProgressBarVisibility(it)
+        }
+        viewModel.onAddedToCart.observe(viewLifecycleOwner) {
+            Toast.makeText(requireContext(), R.string.saved, Toast.LENGTH_SHORT)
+            btnAddToCart.isEnabled = false
         }
         viewModel.errorMessage.observe(viewLifecycleOwner) {
             Toast.makeText(requireContext(), it, Toast.LENGTH_LONG).show()

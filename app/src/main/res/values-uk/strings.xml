@@ -81,4 +81,7 @@
     <string name="manufacturer_placeholder">Виробник: %s</string>
     <string name="device_type_placeholder">Тип пристрою: %s</string>
     <string name="device_models_placeholder">Моделі пристроїв: %s</string>
+    <string name="decrement">Зменшити</string>
+    <string name="increment">Збільшити</string>
+    <string name="place_order">Оформити замовлення</string>
 </resources>

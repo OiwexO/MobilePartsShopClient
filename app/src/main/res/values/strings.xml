@@ -92,4 +92,7 @@
     <string name="manufacturer_placeholder">Manufacturer: %s</string>
     <string name="device_type_placeholder">Device type: %s</string>
     <string name="device_models_placeholder">Device models: %s</string>
+    <string name="decrement">Decrement</string>
+    <string name="increment">Increment</string>
+    <string name="place_order">Place order</string>
 </resources>
