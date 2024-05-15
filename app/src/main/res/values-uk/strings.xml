@@ -77,4 +77,8 @@
     <string name="hint_review_edited">(Змінено)</string>
     <string name="rating_placeholder">Рейтинг: %d/10</string>
     <string name="add_part_to_cart">Додати до Кошика</string>
+    <string name="part_type_placeholder">Тип комплектуючої: %s</string>
+    <string name="manufacturer_placeholder">Виробник: %s</string>
+    <string name="device_type_placeholder">Тип пристрою: %s</string>
+    <string name="device_models_placeholder">Моделі пристроїв: %s</string>
 </resources>

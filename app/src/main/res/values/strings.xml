@@ -88,4 +88,8 @@
     <string name="hint_review_edited">(Edited)</string>
     <string name="rating_placeholder">Rating: %d/10</string>
     <string name="add_part_to_cart">Add Part to Cart</string>
+    <string name="part_type_placeholder">Part type: %s</string>
+    <string name="manufacturer_placeholder">Manufacturer: %s</string>
+    <string name="device_type_placeholder">Device type: %s</string>
+    <string name="device_models_placeholder">Device models: %s</string>
 </resources>

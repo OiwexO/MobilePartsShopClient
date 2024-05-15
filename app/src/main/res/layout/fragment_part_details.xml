@@ -51,36 +51,36 @@
             style="@style/textview_part_spec_label"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/textViewSpecifications"
-            tools:text="Part type: Motherboard" />
+            tools:text="@string/part_type_placeholder" />
 
         <TextView
             android:id="@+id/textViewManufacturer"
             style="@style/textview_part_spec_label"
+            android:text="@string/manufacturer_placeholder"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textViewPartType"
-            tools:text="Manufacturer: Samsung" />
+            app:layout_constraintTop_toBottomOf="@id/textViewPartType" />
 
         <TextView
             android:id="@+id/textViewDeviceType"
             style="@style/textview_part_spec_label"
+            android:text="@string/device_type_placeholder"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textViewManufacturer"
-            tools:text="Device type: Tablet" />
+            app:layout_constraintTop_toBottomOf="@id/textViewManufacturer" />
 
         <TextView
             android:id="@+id/textViewModels"
             style="@style/textview_part_spec_label"
+            android:text="@string/device_models_placeholder"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textViewDeviceType"
-            tools:text="Device models: Model A, Model B, Model C, Model D" />
+            app:layout_constraintTop_toBottomOf="@id/textViewDeviceType" />
 
         <TextView
             android:id="@+id/textViewPrice"
             style="@style/textview_part_spec_label"
             android:layout_width="wrap_content"
+            android:text="@string/price_placeholder"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewModels"
-            tools:text="1999.99 UAH" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewModels" />
 
         <Button
             android:id="@+id/btnAddToCart"
@@ -121,5 +121,14 @@
             app:layout_constraintTop_toBottomOf="@id/btnWriteReview"
             tools:listitem="@layout/item_review" />
 
+        <ProgressBar
+            android:id="@+id/progressBarPartDetailsFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/textViewSpecifications"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
