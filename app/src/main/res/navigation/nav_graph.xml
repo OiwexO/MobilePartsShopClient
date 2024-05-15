@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.iwex.mobilepartsshop.presentation.fragment.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/searchPartsFragment"
+        android:name="com.iwex.mobilepartsshop.presentation.fragment.search.SearchPartsFragment"
+        android:label="fragment_management"
+        tools:layout="@layout/fragment_search_parts">
+        <action
+            android:id="@+id/action_searchPartsFragment_to_partsFragment"
+            app:destination="@id/partsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.iwex.mobilepartsshop.presentation.fragment.settings.SettingsFragment"
+        android:label="SettingsFragment"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.iwex.mobilepartsshop.presentation.fragment.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_ordersFragment"
+            app:destination="@id/ordersFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_editDeviceFragment"
+            app:destination="@id/editDeviceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ordersFragment"
+        android:name="com.iwex.mobilepartsshop.presentation.fragment.profile.orders.OrdersFragment"
+        android:label="fragment_assigned_orders"
+        tools:layout="@layout/fragment_orders">
+        <action
+            android:id="@+id/action_ordersFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_ordersFragment_to_orderDetailsFragment"
+            app:destination="@id/orderDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderDetailsFragment"
+        android:name="com.iwex.mobilepartsshop.presentation.fragment.profile.orders.details.OrderDetailsFragment"
+        android:label="OrderDetailsFragment"
+        tools:layout="@layout/fragment_order_details">
+        <action
+            android:id="@+id/action_orderDetailsFragment_to_ordersFragment"
+            app:destination="@id/ordersFragment" />
+        <argument
+            android:name="orderId"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.iwex.mobilepartsshop.presentation.fragment.cart.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" />
+    <fragment
+        android:id="@+id/editDeviceFragment"
+        android:name="com.iwex.mobilepartsshop.presentation.fragment.profile.device.EditDeviceFragment"
+        android:label="fragment_edit_device"
+        tools:layout="@layout/fragment_edit_device" >
+        <action
+            android:id="@+id/action_editDeviceFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/partsFragment"
+        android:name="com.iwex.mobilepartsshop.presentation.fragment.parts.PartsFragment"
+        android:label="fragment_parts"
+        tools:layout="@layout/fragment_parts" >
+        <argument
+            android:name="recommendationByCriteriaRequest"
+            app:argType="com.iwex.mobilepartsshop.domain.entity.recommendation.RecommendationByCriteriaRequest"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <argument
+            android:name="recommendationByDeviceRequest"
+            app:argType="com.iwex.mobilepartsshop.domain.entity.recommendation.RecommendationByDeviceRequest"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_partsFragment_to_searchPartsFragment"
+            app:destination="@id/searchPartsFragment" />
+        <action
+            android:id="@+id/action_partsFragment_to_partDetailsFragment"
+            app:destination="@id/partDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/partDetailsFragment"
+        android:name="com.iwex.mobilepartsshop.presentation.fragment.parts.details.PartDetailsFragment"
+        android:label="fragment_part_details"
+        tools:layout="@layout/fragment_part_details" >
+        <action
+            android:id="@+id/action_partDetailsFragment_to_partsFragment"
+            app:destination="@id/partsFragment" />
+        <argument
+            android:name="part"
+            app:argType="com.iwex.mobilepartsshop.domain.entity.part.Part" />
+    </fragment>
+</navigation>

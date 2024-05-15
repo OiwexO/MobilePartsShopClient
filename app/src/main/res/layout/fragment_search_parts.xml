@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.fragment.search.SearchPartsFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnViewAllParts"
+            style="@style/button"
+            android:text="@string/view_all_parts" />
+
+        <Button
+            android:id="@+id/btnSearchByCriteria"
+            style="@style/button"
+            android:text="@string/search_by_criteria" />
+
+        <LinearLayout
+            android:id="@+id/layoutSearchByCriteria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <!-- Manufacturer Label -->
+            <TextView
+                android:id="@+id/textViewManufacturerLabel"
+                style="@style/spinner_label"
+                android:text="@string/select_manufacturer" />
+
+            <!-- Manufacturer Spinner -->
+            <Spinner
+                android:id="@+id/spinnerManufacturer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+            <!-- Device Type Label -->
+            <TextView
+                android:id="@+id/textViewDeviceTypeLabel"
+                style="@style/spinner_label"
+                android:text="@string/select_device_type" />
+
+            <!-- Device Type Spinner -->
+            <Spinner
+                android:id="@+id/spinnerDeviceType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+            <!-- Part Type Label -->
+            <TextView
+                android:id="@+id/textViewPartTypeLabel"
+                style="@style/spinner_label"
+                android:text="@string/select_part_type" />
+
+            <!-- Part Type Spinner -->
+            <Spinner
+                android:id="@+id/spinnerPartType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp" />
+
+            <CheckBox
+                android:id="@+id/checkboxSearchByCriteriaSortByPrice"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/sort_by_price"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btnSearchByCriteriaConfirm"
+                style="@style/button"
+                android:text="@string/search" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSearchByDevice"
+            style="@style/button"
+            android:enabled="false"
+            android:text="@string/search_by_device" />
+
+        <TextView
+            android:id="@+id/textViewSaveDeviceFirst"
+            android:layout_gravity="center"
+            android:maxLines="2"
+            android:text="@string/hint_save_device_first"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:id="@+id/layoutSearchByDevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <CheckBox
+                android:id="@+id/checkboxSearchByDeviceSortByPrice"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/sort_by_price"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btnSearchByDeviceConfirm"
+                style="@style/button"
+                android:text="@string/search" />
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
